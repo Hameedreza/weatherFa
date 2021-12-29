@@ -185,11 +185,7 @@ let dayOfWeek = (dt = new Date().getTime()) =>{
   return new Date(dt).toLocaleDateString('fa-IR' , {'weekday' : 'long'});
 }
 
-let init = () => {
-  weatherForCity('تهران').then( () => document.body.style.filter = 'blur(0)');
-}
 
-init();
 
 let weatherForCity = async (city) =>{
   let weather = await getWeatherByCityName(city);
@@ -200,7 +196,11 @@ let weatherForCity = async (city) =>{
   updateForecast(dailyInfo);
 }
 
+let init = () => {
+  weatherForCity('تهران').then( () => document.body.style.filter = 'blur(0)');
+}
 
+init();
 
 searchInput.addEventListener('keydown' ,  async(e) =>{
   englishAl.forEach(alph =>{
