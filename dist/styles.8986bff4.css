@@ -1,0 +1,178 @@
+@font-face {
+  font-family: "persianFont";
+  src: url(/BNarm.7f43c1ae.woff) format("woff"),
+    url(/BNarm.1284208a.ttf) format("truetypefont");
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-size: 2rem;
+  font-family: "persianFont", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #fff;
+  box-sizing: border-box;
+  background: url(/background1.fa17ae55.jpg);
+  background-size: cover;
+  filter: blur(15px);
+  transition: filter .5s;
+}
+
+.weather {
+  width: 80vw;
+  margin: 2rem auto;
+  padding: 20px 0;
+  white-space: nowrap;
+}
+
+.weather__search {
+  width: 100%;
+  height: 6vh;
+  padding: 15px 10px;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  font-size: 3rem;
+  color: #fff;
+  caret-color: #c1dd90;
+  font-family: "persianFont", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: all 0.3s;
+}
+
+.weather__search:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.weather__search:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid #c1dd90;
+  box-shadow: 0 0 5px 3px #c1dd90;
+}
+.weather__search::placeholder {
+  font-size: 3rem;
+  color: #fff;
+  font-family: persianFont, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.weather__today {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0 2rem;
+  flex-wrap: wrap;
+}
+
+.weather__image {
+  width: 25vmin;
+  align-self: center;
+}
+
+.weather__city {
+  font-size: 7rem;
+  margin: 0;
+  padding: 0;
+}
+
+.weather__day {
+  font-size: 4rem;
+  margin: 0 0 1rem;
+  font-weight: light;
+}
+
+.weather__indicators {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.weather__indicators::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  background-size: cover;
+}
+
+.weather__indicators--humidity::before {
+  background-image: url(/humidity.3495eea5.png);
+}
+
+.weather__indicators--wind::before {
+  background-image: url(/wind.548de655.png);
+}
+
+.weather__indicators--pressure::before {
+  background-image: url(/pressure.6b1e5782.png);
+}
+
+.weather__temp {
+  font-size: 10rem;
+  align-self: center;
+}
+
+.weahter__forecast {
+  text-align: center;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.weather__forecast__item {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+  padding: 6rem 2rem 2rem;
+  width: 20rem;
+  border-radius: 2rem;
+  flex-grow: 1;
+  transition: all 0.5s;
+}
+
+.weather__forecast__item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+
+.weather__forecast__item:active {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+.weather__forecast__item:not(:first-child, :last-child) {
+  margin: 1rem 1rem;
+}
+
+.weather__forecast__item:first-child {
+  margin: 1rem 0 1rem 1rem;
+}
+
+.weather__forecast__item:last-child {
+  margin: 1rem 1rem 1rem 0;
+}
+
+.weather__forecast__icon {
+  width: 10rem;
+}
+
+.weather__forecast__day {
+  font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.weather__forecast__temprature {
+  font-size: 3rem;
+  margin: 0 0 2rem;
+}
+
+
+/*# sourceMappingURL=/styles.8986bff4.css.map */
