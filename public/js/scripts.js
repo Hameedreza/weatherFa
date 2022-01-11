@@ -1,23 +1,25 @@
 // import 'regenerator-runtime/runtime'
 
 
-let searchInput = document.querySelector('.weather__search');
-let cityName = document.querySelector('.weather__city');
-let day = document.querySelector('.weather__day');
-let humidity = document.querySelector('.weather__indicators--humidity>.value');
-let wind = document.querySelector('.weather__indicators--wind>.value');
-let pressure = document.querySelector('.weather__indicators--pressure>.value');
-let image = document.querySelector('.weather__image');
-let temprature = document.querySelector('.weather__temp>.value');
-let forecastBock = document.querySelector('.weahter__forecast');
-let forecastIcon = document.querySelector('.weather__forecast__icon');
-let forecastDay = document.querySelector('.weather__forecast__day');
-let forecasttemp = document.querySelector('.weather__forecast__temprature');
-let suggestions = document.querySelector('.suggestion');
-let hamburger = document.querySelector('.hamburger');
-let line1 = document.querySelector('.line-1');
-let line2 = document.querySelector('.line-2');
-let line3 = document.querySelector('.line-3');
+const searchInput = document.querySelector('.weather__search');
+const cityName = document.querySelector('.weather__city');
+const day = document.querySelector('.weather__day');
+const humidity = document.querySelector('.weather__indicators--humidity>.value');
+const wind = document.querySelector('.weather__indicators--wind>.value');
+const pressure = document.querySelector('.weather__indicators--pressure>.value');
+const image = document.querySelector('.weather__image');
+const temprature = document.querySelector('.weather__temp>.value');
+const forecastBock = document.querySelector('.weahter__forecast');
+const forecastIcon = document.querySelector('.weather__forecast__icon');
+const forecastDay = document.querySelector('.weather__forecast__day');
+const forecasttemp = document.querySelector('.weather__forecast__temprature');
+const suggestions = document.querySelector('.suggestion');
+const hamburger = document.querySelector('.hamburger');
+const line1 = document.querySelector('.line-1');
+const line2 = document.querySelector('.line-2');
+const line3 = document.querySelector('.line-3');
+const menu = document.querySelector('.menu');
+const weather= document.querySelector('.weather');
 
 let APIKey = 'f999dc164b9448e80899d77c2d3c6a56';
 let endpoint = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + APIKey;
@@ -93,17 +95,14 @@ let images = [
 ]
 
 hamburger.addEventListener('click' , (event)=>{
-  line2.style.display = 'none';
-  line1.style.transform = 'rotate(45deg) translateY(22px)';
-  line3.style.transform = 'rotate(-45deg) translateY(-22px)';
-  
+  hamburger.classList.toggle('rotate');
+  line1.classList.toggle('color');
+  line2.classList.toggle('color');
+  line3.classList.toggle('color');
+  menu.classList.toggle('menu-up');
 })
 
-// hamburger.addEventListener('click' , (event)=>{
-//   line2.style.display = 'inline';
-//   line1.style.transform = 'rotate(0) translateY(0)';
-//   line3.style.transform = 'rotate(0) translateY(0)';
-// })
+
 
 
 let getWeatherByCityName = async (name) => {
@@ -131,7 +130,6 @@ let getWeatherByCityName = async (name) => {
   request.open('GET', '../cities.josn');
   request.onload = function () {
     const details = request.response;
-    console.log(details);
     const cities = JSON.parse(details);
     for (let city of cities) {
       if (city.name === name) {

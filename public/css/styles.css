@@ -10,6 +10,7 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
   font-size: 2rem;
   font-family: "persianFont", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -18,37 +19,36 @@ body {
   background: url(../images/background1.jpg);
   background-size: cover;
   filter: blur(15px);
-  transition: filter .5s;
+  transition: filter 0.5s;
 }
 
-header{
+header {
   display: flex;
   justify-content: space-between;
 }
 
-
-.links a{
+.links a {
   align-self: center;
   text-decoration: none;
   color: #fff;
   font-size: 3rem;
   font-weight: bold;
-  transition: background-color .5s;
+  transition: background-color 0.5s;
   margin-right: 10rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
-.links a:hover{
-  background-color: rgba(255, 255, 255, .3);
+.links a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
   /* padding: .5rem; */
   border-radius: 10px;
   border-bottom: 1px solid #fff;
 }
 
-.links a:active{
+.links a:active {
   border-top: 1px solid #fff;
   border-bottom: none;
-  transform: scale(.8);
+  transform: scale(0.8);
 }
 
 .weather {
@@ -59,7 +59,7 @@ header{
 }
 
 .weather__search {
-  width: 100٪;
+  width: 100%;
   height: 6vh;
   padding: 15px 10px;
   outline: none;
@@ -170,13 +170,11 @@ header{
   cursor: pointer;
 }
 
-
 .weather__forecast__item:active {
   background-color: rgba(255, 255, 255, 0.8);
   transform: scale(1.1);
   cursor: pointer;
 }
-
 
 .weather__forecast__item:not(:first-child, :last-child) {
   margin: 1rem 1rem;
@@ -204,8 +202,7 @@ header{
   margin: 0 0 2rem;
 }
 
-
-.hamburger{
+.hamburger {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -215,30 +212,69 @@ header{
   flex-direction: column;
   justify-content: space-between;
   visibility: hidden;
+  transition: transform 1s ease;
 }
 
-.line{
+.line {
   width: 40px;
   height: 8px;
   background-color: #fff;
-
+  transition: all 0.5s ease-in-out;
 }
 
+.rotate {
+  transform: rotate(360deg);
+}
+.color {
+  background-color: yellowgreen;
+}
+.menu {
+  width: 100%;
+  height: 50vh;
+  margin: 0;
+  background-color: #fff;
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: -55rem;
+  transition: all 0.7s ease;
+}
+.menu-up {
+  top: -2rem;
+}
+.list-item a{
+  text-decoration: none;
+  font-size: 3rem;
+  color: yellowgreen;
+}
+.list-item{
+  margin: 2rem 0;
+}
 
-@media screen and (max-width:800px) {
-  .hamburger{
+.gray {
+  filter: grayscale(1);
+}
+
+@media screen and (max-width: 800px) {
+  .hamburger {
     visibility: visible;
   }
-  .links{
+  .links {
     display: none;
-  } 
-  .weather__search{
+  }
+  .weather__search {
     width: 80%;
   }
 }
 
 @media screen and (max-width: 450px) {
-  .weather__search{
+  .weather__search {
     width: 60%;
+  }
+  .weather__indicators{
+    font-size: 2rem;
   }
 }
