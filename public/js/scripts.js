@@ -14,6 +14,10 @@ let forecastIcon = document.querySelector('.weather__forecast__icon');
 let forecastDay = document.querySelector('.weather__forecast__day');
 let forecasttemp = document.querySelector('.weather__forecast__temprature');
 let suggestions = document.querySelector('.suggestion');
+let hamburger = document.querySelector('.hamburger');
+let line1 = document.querySelector('.line-1');
+let line2 = document.querySelector('.line-2');
+let line3 = document.querySelector('.line-3');
 
 let APIKey = 'f999dc164b9448e80899d77c2d3c6a56';
 let endpoint = 'https://api.openweathermap.org/data/2.5/weather?units=metric&appid=' + APIKey;
@@ -87,6 +91,20 @@ let images = [
     id: [803, 804]
   }
 ]
+
+hamburger.addEventListener('click' , (event)=>{
+  line2.style.display = 'none';
+  line1.style.transform = 'rotate(45deg) translateY(22px)';
+  line3.style.transform = 'rotate(-45deg) translateY(-22px)';
+  
+})
+
+// hamburger.addEventListener('click' , (event)=>{
+//   line2.style.display = 'inline';
+//   line1.style.transform = 'rotate(0) translateY(0)';
+//   line3.style.transform = 'rotate(0) translateY(0)';
+// })
+
 
 let getWeatherByCityName = async (name) => {
   let baseEndpoint = endpoint + '&q=' + name;

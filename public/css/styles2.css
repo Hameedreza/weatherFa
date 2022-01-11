@@ -28,73 +28,89 @@ body {
   margin: 2rem auto;
   padding: 20px 0;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.image{
+.image {
   display: grid;
   place-items: center;
 }
 
-img{
+img {
   width: 95%;
   border-radius: 5rem;
   align-self: center;
 }
 
-.text{
+.text {
   direction: rtl;
   width: 40vw;
-  background:skyblue;
+  background: skyblue;
   height: 100%;
-  padding: 3rem .5rem;
+  padding: 3rem 0.5rem;
   align-self: center;
   border-radius: 5rem;
 }
 
-
-.links a{
+.links a {
   align-self: center;
   text-decoration: none;
   color: #fff;
   font-size: 3rem;
   font-weight: bold;
-  transition: all .5s;
+  transition: all 0.5s;
   margin-right: 10rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
-.links a:hover{
-  background-color: rgba(255, 255, 255, .3);
-  padding: .5rem;
+.links a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 0.5rem;
   border-radius: 10px;
   border-bottom: 1px solid #fff;
 }
 
-.links a:active{
+.links a:active {
   border-top: 1px solid #fff;
   border-bottom: none;
-  transform: scale(.8);
+  transform: scale(0.8);
 }
 
-
 @media screen and (max-width: 1730px) {
-  .text{
+  .text {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 }
 
-@media screen and (max-width: 1525px){
-  body{
-    font-size: 1rem;
-  }
-  .links{
-    display: flex;
-    justify-content: space-around;
+@media screen and (max-width: 1525px) {
+  .links {
+    display: block;
   }
 
-  .links a{
-    font-size: 1rem;
+  .links a {
+    margin: 0 5rem;
+    font-size: 5rem;
+  }
+  img {
+    width: 60%;
+  }
+  .text{
+    width: 40%;
+  }
+}
+
+
+@media screen and (max-width: 800px){
+  .links a {
+    font-size: 2rem;
+  }
+  img{
+    width: 40%;
+  }
+  .text{ 
+    font-size: 0.8rem;
+    height: 60%;
   }
 }
