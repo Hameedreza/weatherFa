@@ -1,7 +1,7 @@
 @font-face {
   font-family: "persianFont";
-  src: url(Fonts/BNarm.woff) format("woff"),
-    url(Fonts/BNarm.ttf) format("truetypefont");
+  src: url(../Fonts/BNarm.woff) format("woff"),
+    url(../Fonts/BNarm.ttf) format("truetypefont");
 }
 
 html {
