@@ -7,6 +7,7 @@ const path = require('path');
 const publicPath = path.join(__dirname , '../public');
 const viewPath = path.join(__dirname , 'views');
 const partialsPath = path.join(__dirname , 'partials');
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -29,6 +30,6 @@ app.get('/about' , (req,res)=>{
 
 
 
-app.listen(3000 , ()=>{
-  console.log('Server is up on port 3000');
+app.listen(port , ()=>{
+  console.log('Server is up on port ' + port);
 })
