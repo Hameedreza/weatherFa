@@ -21,6 +21,36 @@ body {
   transition: filter .5s;
 }
 
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.links a{
+  align-self: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  transition: all .5s;
+  margin-right: 10rem;
+  padding: .5rem;
+}
+
+.links a:hover{
+  background-color: rgba(255, 255, 255, .3);
+  /* padding: .5rem; */
+  border-radius: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+.links a:active{
+  border-top: 1px solid #fff;
+  border-bottom: none;
+  transform: scale(.8);
+}
+
 .weather {
   width: 80vw;
   margin: 2rem auto;
@@ -29,7 +59,7 @@ body {
 }
 
 .weather__search {
-  width: 100%;
+  width: 70%;
   height: 6vh;
   padding: 15px 10px;
   outline: none;

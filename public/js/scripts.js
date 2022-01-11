@@ -96,35 +96,35 @@ let getWeatherByCityName = async (name) => {
     return;
   }
   let results = await responce.json();
-  fetch('../../cities.json').then(responce =>{
-    responce.json().then(data =>{
-      for (let city of data){
-        if(city.name === name){
-          cityName.textContent = city.name;
-          break;
-        }
-        else{
-          cityName.textContent = results.name;
-        }
-      }
-    })
-  })
-  // let request = new XMLHttpRequest();
-  // request.open('GET', '../cities.josn');
-  // request.onload = function () {
-  //   const details = request.response;
-  //   console.log(details);
-  //   const cities = JSON.parse(details);
-  //   for (let city of cities) {
-  //     if (city.name === name) {
-  //       cityName.textContent = city.name;
-  //       break;
-  //     } else {
-  //       cityName.textContent = results.name;
+  // fetch('../../cities.json').then(responce =>{
+  //   responce.json().then(data =>{
+  //     for (let city of data){
+  //       if(city.name === name){
+  //         cityName.textContent = city.name;
+  //         break;
+  //       }
+  //       else{
+  //         cityName.textContent = results.name;
+  //       }
   //     }
-  //   };
-  // }
-  // request.send();
+  //   })
+  // })
+  let request = new XMLHttpRequest();
+  request.open('GET', '../cities.josn');
+  request.onload = function () {
+    const details = request.response;
+    console.log(details);
+    const cities = JSON.parse(details);
+    for (let city of cities) {
+      if (city.name === name) {
+        cityName.textContent = city.name;
+        break;
+      } else {
+        cityName.textContent = results.name;
+      }
+    };
+  }
+  request.send();
   cityName.textContent = results.name;
   return results;
 }

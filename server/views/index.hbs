@@ -10,10 +10,13 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js" defer></script>
 </head>
-<body~>
+<body>
   <div class="weather">
-    <input type="search" class="weather__search" placeholder="نام شهر" list="suggestion">
-    <datalist id ="suggestion" class="suggestion"></datalist>
+    <header>
+      <input type="search" class="weather__search" placeholder="نام شهر" list="suggestion">
+      <datalist id ="suggestion" class="suggestion"></datalist>
+      {{>header}}
+    </header>
     <div class="weather__today">
       <div class="weather__details">
         <h2 class="weather__city">تهران</h2>
