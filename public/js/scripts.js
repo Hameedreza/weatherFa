@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime'
+// import 'regenerator-runtime/runtime'
 
 
 let searchInput = document.querySelector('.weather__search');
@@ -51,39 +51,39 @@ let englishAl = [
 
 let images = [
   {
-    url: 'images/lightning2.png',
+    url: '../images/lightning2.png',
     id: [200, 201, 202, 210, 211, 212, 221, 230, 231, 232]
   },
   {
-    url: 'images/rain2.png',
+    url: '../images/rain2.png',
     id: [500, 501, 502, 503, 504]
   },
   {
-    url: 'images/shower-rain2.png',
+    url: '../images/shower-rain2.png',
     id: [520, 521, 522, 531]
   },
   {
-    url: 'images/mist2.png',
+    url: '../images/mist2.png',
     id: [701, 711, 721, 731, 741, 751, 761, 762, 771, 781]
   },
   {
-    url: 'images/sunny2.png',
+    url: '../images/sunny2.png',
     id: [800]
   },
   {
-    url: 'images/snowy2.png',
+    url: '../images/snowy2.png',
     id: [600, 601, 602, 611, 612, 613, 614, 615, 616, 620, 621, 622]
   },
   {
-    url: 'images/partly-cloudy2.png',
+    url: '../images/partly-cloudy2.png',
     id: [801]
   },
   {
-    url: 'images/scatter-clouds2.png',
+    url: '../images/scatter-clouds2.png',
     id: [802]
   },
   {
-    url: 'images/broken-clouds2.png',
+    url: '../images/broken-clouds2.png',
     id: [803, 804]
   }
 ]
@@ -96,7 +96,7 @@ let getWeatherByCityName = async (name) => {
     return;
   }
   let results = await responce.json();
-  fetch('cities.json').then(responce =>{
+  fetch('../../cities.json').then(responce =>{
     responce.json().then(data =>{
       for (let city of data){
         if(city.name === name){

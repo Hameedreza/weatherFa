@@ -15,7 +15,7 @@ body {
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #fff;
   box-sizing: border-box;
-  background: url(images/background1.jpg);
+  background: url(../images/background1.jpg);
   background-size: cover;
   filter: blur(15px);
   transition: filter .5s;
@@ -100,15 +100,15 @@ body {
 }
 
 .weather__indicators--humidity::before {
-  background-image: url(images/humidity.png);
+  background-image: url(../images/humidity.png);
 }
 
 .weather__indicators--wind::before {
-  background-image: url(images/wind.png);
+  background-image: url(../images/wind.png);
 }
 
 .weather__indicators--pressure::before {
-  background-image: url(images/pressure.png);
+  background-image: url(../images/pressure.png);
 }
 
 .weather__temp {
