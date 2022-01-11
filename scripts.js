@@ -1,3 +1,6 @@
+import 'regenerator-runtime/runtime'
+
+
 let searchInput = document.querySelector('.weather__search');
 let cityName = document.querySelector('.weather__city');
 let day = document.querySelector('.weather__day');
@@ -93,21 +96,36 @@ let getWeatherByCityName = async (name) => {
     return;
   }
   let results = await responce.json();
-  let request = new XMLHttpRequest();
-  request.open('GET', './cities.json');
-  request.onload = function () {
-    details = request.response;
-    cities = JSON.parse(details);
-    for (let city of cities) {
-      if (city.name === name) {
-        cityName.textContent = city.name;
-        break;
-      } else {
-        cityName.textContent = results.name;
+  fetch('cities.json').then(responce =>{
+    responce.json().then(data =>{
+      for (let city of data){
+        if(city.name === name){
+          cityName.textContent = city.name;
+          break;
+        }
+        else{
+          cityName.textContent = results.name;
+        }
       }
-    };
-  }
-  request.send();
+    })
+  })
+  // let request = new XMLHttpRequest();
+  // request.open('GET', '../cities.josn');
+  // request.onload = function () {
+  //   const details = request.response;
+  //   console.log(details);
+  //   const cities = JSON.parse(details);
+  //   for (let city of cities) {
+  //     if (city.name === name) {
+  //       cityName.textContent = city.name;
+  //       break;
+  //     } else {
+  //       cityName.textContent = results.name;
+  //     }
+  //   };
+  // }
+  // request.send();
+  cityName.textContent = results.name;
   return results;
 }
 
@@ -207,7 +225,7 @@ searchInput.addEventListener('keydown', async (e) => {
 searchInput.addEventListener('input', async (e) => {
   let endpoint = cityBaseEndpoint + searchInput.value;
   let results = await (await fetch(endpoint)).json();
-  console.log(results);
+  // console.log(results);
   let cities = results._embedded['city:search-results'];
   suggestions.innerHTML = '';
   console.log(cities);
