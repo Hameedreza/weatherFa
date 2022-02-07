@@ -113,7 +113,16 @@ let getWeatherByCityName = async (name) => {
     return;
   }
   let results = await responce.json();
-  // fetch('../../cities.json').then(responce =>{
+  const citiesInFarsi = async()=>{
+    const data = await (await fetch('../cities.json')).json();
+    for(let city of data){
+      if (city.name === name) return cityName.textContent = city.name
+      cityName.textContent = results.name;
+    }
+  }
+
+  citiesInFarsi();
+  // fetch('cities.json').then(responce =>{
   //   responce.json().then(data =>{
   //     for (let city of data){
   //       if(city.name === name){
@@ -126,21 +135,23 @@ let getWeatherByCityName = async (name) => {
   //     }
   //   })
   // })
-  let request = new XMLHttpRequest();
-  request.open('GET', '../cities.josn');
-  request.onload = function () {
-    const details = request.response;
-    const cities = JSON.parse(details);
-    for (let city of cities) {
-      if (city.name === name) {
-        cityName.textContent = city.name;
-        break;
-      } else {
-        cityName.textContent = results.name;
-      }
-    };
-  }
-  request.send();
+  // let request = new XMLHttpRequest();
+  // request.open('GET', '../../cities.json');
+  // request.onload = function () {
+  //   const details = request.response;
+  //   console.log(details);
+  //   console.log(jsonData);
+  //   const cities = JSON.parse(details);
+  //   for (let city of cities) {
+  //     if (city.name === name) {
+  //       return cityName.textContent = city.name;
+        
+  //     } else {
+  //       cityName.textContent = results.name;
+  //     }
+  //   };
+  // }
+  // request.send();
   cityName.textContent = results.name;
   return results;
 }
